@@ -22,7 +22,7 @@ export class ChatBubble extends Component{
         }
 
         const style = {
-            maxWidth: '33%',
+            maxWidth: '45%',
             backgroundColor: backgroundColor,
             padding: '8px', 
             margin: '4px', 

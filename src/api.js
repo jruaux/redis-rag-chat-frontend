@@ -1,5 +1,5 @@
 export const SendMessage = async function(message, chatId){
-    const responseMessage = await fetch(`${process.env.REACT_APP_BACKEND_URI}/chat/${chatId}`,{
+    const responseMessage = await fetch(`chat/${chatId}`,{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -13,7 +13,7 @@ export const SendMessage = async function(message, chatId){
 }
 
 export const StartChat = async function(){
-    const responseMessage = await fetch(`${process.env.REACT_APP_BACKEND_URI}/chat/startChat`, {
+    const responseMessage = await fetch("chat/startChat", {
         headers: {
             'Content-Type': 'application/json'
         },
@@ -25,7 +25,7 @@ export const StartChat = async function(){
 export const UploadDocument = async function(file){
     const form = new FormData();
     form.append('file', file);
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URI}/documents/upload`,
+    const response = await fetch("chat/uploadDoc",
         {
             method:'POST',
             body: form

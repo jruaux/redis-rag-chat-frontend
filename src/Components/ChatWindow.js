@@ -92,7 +92,7 @@ export class ChatWindow extends Component{
     if(this.state.awaitingServer){
       return(
         <div style={{display:'flex', justifyContent:'center', alignItems:'center', height: '100vh'}}>
-          <span>Awaiting Server to start up on {process.env.REACT_APP_BACKEND_URI}...</span>
+          <span>Awaiting Server to start up...</span>
         </div>
       )
     }   
@@ -124,12 +124,7 @@ export class ChatWindow extends Component{
               onChange={(e) => this.handleTextAreaChange(e)}
               style={{margin: '5px', flexGrow: 1, maxWidth: '600px', borderRadius: '10px', overflowWrap: 'break-word', overflowX: 'hidden', overflowY: 'auto'}}
               />
-              <Button type='submit' style={{height: 'auto', alignSelf: 'stretch'}} disabled={this.uiDisabled() ? 'disabled':''} onClick={this.sendMessage}>Send</Button>
-              <div style={{height: 'auto', alignSelf: 'stretch', marginLeft: '5px'}}>
-                <input type='file' style={{display:'none'}} ref={this.fileRef} onChange={this.handleFileChanged}/>
-                <Button disabled={this.uiDisabled() ? 'disabled':''} onClick={this.handleDocumentUploadClick} type='button' style={{height: '100%'}} >Upload</Button>
-              </div>
-              
+            <Button type='submit' style={{height: 'auto', alignSelf: 'stretch'}} disabled={this.uiDisabled() ? 'disabled':''} onClick={this.sendMessage}>Send</Button>
           </div>
           
         </Form.Group>
